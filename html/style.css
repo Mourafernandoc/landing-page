@@ -1,0 +1,148 @@
+/* Variáveis de cores para fácil customização */
+:root {
+    --primary-bg: #003366;
+    --primary-text: #ffffff;
+    --secondary-bg: #f0f0f0;
+    --secondary-text: #333333;
+    --accent-color: #ffcc00;
+    --muted-text: #666666;
+    --link-hover: #ff6600;
+    --border-radius: 8px;
+}
+
+/* Modo Escuro */
+body.dark {
+    --primary-bg: #1a1a1a;
+    --primary-text: #f0f0f0;
+    --secondary-bg: #333333;
+    --secondary-text: #e0e0e0;
+    --accent-color: #ffcc00;
+    --muted-text: #999999;
+}
+
+/* Estilos globais */
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Links */
+a {
+    color: var(--primary-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-bg);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: var(--primary-text);
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Main content */
+main {
+    padding: 40px;
+}
+
+h1, h2, h3 {
+    color: var(--primary-text);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: var(--muted-text);
+}
+
+/* Instituições financeiras */
+img {
+    height: 64px;
+    border-radius: var(--border-radius);
+}
+
+/* Contato */
+div.contact-info {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.contact-info h4 {
+    color: var(--primary-text);
+}
+
+.contact-info p {
+    color: var(--muted-text);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    img {
+        height: 48px;
+    }
+}
