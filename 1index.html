@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Pote de Amor - 365 Motivos</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #4a4a4a;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #d81b60;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* O Pote */
+        .pot-container {
+            position: relative;
+            cursor: pointer;
+            margin: 0 auto 25px auto;
+            width: 160px;
+            height: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .pot-container:hover {
+            transform: scale(1.05);
+        }
+
+        .pot {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            border: 4px solid #e91e63;
+            border-top: 6px solid #c2185b;
+            border-radius: 20px 20px 40px 40px;
+            position: relative;
+            box-shadow: inset 0 0 15px rgba(233, 30, 99, 0.2), 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pot-label {
+            background: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px dashed #e91e63;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #c2185b;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Bilhete Revelado */
+        .note-card {
+            background: #fffdf0;
+            border-left: 4px solid #e91e63;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-top: 20px;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.5s ease-in-out;
+            position: relative;
+        }
+
+        .note-card.hidden {
+            display: none;
+        }
+
+        .note-number {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ad1457;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .note-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .btn-draw {
+            background: #e91e63;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+            transition: background 0.2s, transform 0.2s;
+            width: 100%;
+        }
+
+        .btn-draw:hover {
+            background: #c2185b;
+            transform: translateY(-2px);
+        }
+
+        .btn-draw:active {
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Nosso Pote de Amor</h1>
+        <p class="subtitle">Toque no pote ou clique no botão para puxar o recadinho de hoje.</p>
+
+        <div class="pot-container" onclick="tirarRecado()">
+            <div class="pot">
+                <div class="pot-label">365 Motivos</div>
+            </div>
+        </div>
+
+        <button class="btn-draw" onclick="tirarRecado()">💌 Puxar um Recadinho</button>
+
+        <div id="noteCard" class="note-card hidden">
+            <div class="note-number" id="noteNumber">Motivo #00</div>
+            <div class="note-text" id="noteText">Aqui vai aparecer o texto do bilhete...</div>
+        </div>
+    </div>
+
+    <footer>Feito com todo o carinho ❤️</footer>
+
+    <script>
+        // Carregando alguns motivos direto no script para funcionar perfeitamente de forma estática
+        const motivos = [
+            { id: 1, texto: "Porque o seu sorriso ilumina meu dia." },
+            { id: 2, texto: "Porque o seu abraço é o lugar mais seguro do mundo." },
+            { id: 3, texto: "Porque você transforma qualquer casa em lar." },
+            { id: 4, texto: "Porque você me inspira a ser um homem melhor." },
+            { id: 5, texto: "Porque você me escuta com atenção, mesmo nas minhas loucuras." },
+            { id: 6, texto: "Porque o seu olhar me dá paz." },
+            { id: 7, texto: "Porque a sua risada é a música mais linda que conheço." },
+            { id: 8, texto: "Porque você me faz acreditar no amor verdadeiro." },
+            { id: 9, texto: "Porque você é companheira em todos os momentos." },
+            { id: 10, texto: "Porque você me dá força quando eu penso em desistir." },
+            { id: 50, texto: "Porque amar você é a melhor escolha que já fiz na vida." },
+            { id: 100, texto: "Porque você é a prova de que o amor verdadeiro existe." },
+            { id: 200, texto: "Porque amar você é minha maior aventura." },
+            { id: 365, texto: "Porque eu simplesmente te amo, e isso basta para sempre. ❤" }
+        ];
+
+        function tirarRecado() {
+            // Sorteia um índice aleatório do array
+            const randomIndex = Math.floor(Math.random() * motivos.length);
+            const recadoSorteado = motivos[randomIndex];
+
+            // Elementos da DOM
+            const card = document.getElementById('noteCard');
+            const numElement = document.getElementById('noteNumber');
+            const textElement = document.getElementById('noteText');
+
+            // Aplica efeito visual de transição rápida
+            card.classList.add('hidden');
+
+            setTimeout(() => {
+                numElement.innerText = `Motivo #${recadoSorteado.id}`;
+                textElement.innerText = `"${recadoSorteado.texto}"`;
+                card.classList.remove('hidden');
+            }, 150);
+        }
+    </script>
+</body>
+
+</html>
