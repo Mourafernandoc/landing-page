@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Um Respiro...</title>
+    <title>Nosso Pote de Amor - 365 Motivos</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro:wght@300;400&display=swap');
-
         * {
             margin: 0;
             padding: 0;
@@ -14,168 +16,222 @@
         }
 
         body {
-            /* Fundo de Campo de Girassóis de alta qualidade */
-            background-image: url('https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            font-family: 'Poppins', sans-serif;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            font-family: 'Source Sans Pro', sans-serif;
+            justify-content: center;
+            color: #4a4a4a;
             overflow-x: hidden;
-            position: relative;
+            padding: 20px;
         }
 
-        /* Máscara escura suave para destacar as fotos e o texto */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
-
-        /* Estilo Polaroid para as fotos espalhadas */
-        .photo {
-            position: absolute;
-            width: 200px;
-            height: 250px;
-            object-fit: cover;
-            border: 10px solid #fff;
-            border-bottom: 35px solid #fff;
-            box-shadow: 5px 10px 20px rgba(0,0,0,0.4);
-            z-index: 2;
-            opacity: 0.9;
-            animation: float 6s ease-in-out infinite;
-            border-radius: 2px;
-        }
-
-        /* Posições desordenadas e rotações */
-        .p1 { top: 5%; left: 5%; transform: rotate(-10deg); animation-delay: 0s; }
-        .p2 { top: 10%; right: 8%; transform: rotate(15deg); animation-delay: 1s; }
-        .p3 { bottom: 15%; left: 10%; transform: rotate(-5deg); animation-delay: 2s; }
-        .p4 { bottom: 10%; right: 5%; transform: rotate(12deg); animation-delay: 0.5s; }
-        .p5 { top: 40%; left: -2%; transform: rotate(-20deg); animation-delay: 1.5s; }
-        .p6 { top: 50%; right: -2%; transform: rotate(25deg); animation-delay: 2.5s; }
-
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(inherit); }
-            50% { transform: translateY(-15px) rotate(inherit); }
-            100% { transform: translateY(0px) rotate(inherit); }
-        }
-
-        /* Caixa de Texto Glassmorphism */
-        .content-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 600px;
-            width: 90%;
+        .container {
             text-align: center;
-            color: #fff;
-            z-index: 10;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #d81b60;
+            margin-bottom: 10px;
         }
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        p.subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 25px;
         }
 
-        .buttons {
-            margin-top: 35px;
+        /* O Pote */
+        .pot-container {
+            position: relative;
+            cursor: pointer;
+            margin: 0 auto 25px auto;
+            width: 160px;
+            height: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .pot-container:hover {
+            transform: scale(1.05);
+        }
+
+        .pot {
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            border: 4px solid #e91e63;
+            border-top: 6px solid #c2185b;
+            border-radius: 20px 20px 40px 40px;
+            position: relative;
+            box-shadow: inset 0 0 15px rgba(233, 30, 99, 0.2), 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pot-label {
+            background: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px dashed #e91e63;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #c2185b;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Bilhete Revelado */
+        .note-card {
+            background: #fffdf0;
+            border-left: 4px solid #e91e63;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-top: 20px;
+            min-height: 120px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
             align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.5s ease-in-out;
+            position: relative;
         }
 
-        button {
-            padding: 15px 30px;
+        .note-card.hidden {
+            display: none;
+        }
+
+        .note-number {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ad1457;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .note-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .btn-draw {
+            background: #e91e63;
+            color: white;
             border: none;
-            border-radius: 30px;
+            padding: 12px 25px;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 600;
+            border-radius: 30px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            width: 80%;
-            max-width: 300px;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+            transition: background 0.2s, transform 0.2s;
+            width: 100%;
         }
 
-        .btn-yes {
-            background-color: #f1c40f;
-            color: #2c3e50;
-            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
-        }
-
-        .btn-yes:hover {
-            background-color: #f39c12;
+        .btn-draw:hover {
+            background: #c2185b;
             transform: translateY(-2px);
         }
 
-        .btn-think {
-            background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
+        .btn-draw:active {
+            transform: translateY(0);
         }
 
-        .btn-think:hover {
-            background-color: rgba(255,255,255,0.2);
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* Ocultar fotos em telas muito pequenas para não poluir */
-        @media (max-width: 768px) {
-            .photo { opacity: 0.4; width: 120px; height: 150px; }
-            .content-card { padding: 30px 20px; }
-            h1 { font-size: 2.5rem; }
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #888;
         }
     </style>
 </head>
+
 <body>
-    <div class="overlay"></div>
 
-    <!-- Imagens (Certifique-se de que os nomes dos arquivos estão corretos na mesma pasta) -->
-    <img src="image_30.png" class="photo p1" alt="Foto 1">
-    <img src="image_31.png" class="photo p2" alt="Foto 2">
-    <img src="image_32.png" class="photo p3" alt="Foto 3">
-    <img src="image_33.png" class="photo p4" alt="Foto 4">
-    <img src="image_34.png" class="photo p5" alt="Foto 5">
-    <img src="image_35.png" class="photo p6" alt="Foto 6">
+    <div class="container">
+        <h1>Nosso Pote de Amor</h1>
+        <p class="subtitle">Toque no pote ou clique no botão para puxar o recadinho de hoje.</p>
 
-    <div class="content-card">
-        <h1>Pausa.</h1>
-        
-        <p>Eu sei que a cabeça está barulhenta e que os últimos dias têm exigido uma força absurda de você. Às vezes, a gente tenta abraçar o mundo, assume culpas que não são nossas e acaba esquecendo que não precisa carregar todo esse peso sozinha.</p>
-        
-        <p>Esse link não é para falar de passado, não é para planejar o futuro e, definitivamente, não é para te cobrar nada. É apenas um convite para um respiro.</p>
-        
-        <p>Quero te sequestrar um pouco dessa gravidade neste fim de semana. Preparei algo muito tranquilo, pensado exclusivamente para te ver sorrir e desligar a mente por algumas horas. Sem pressão, sem roteiros complexos e com uma surpresa no final que eu tenho certeza que você vai gostar.</p>
-        
-        <p>Você não precisa se preocupar com logística, horário ou organização. Só precisa dizer "sim" para essa pausa.</p>
-        
-        <p>Topa deixar o mundo no mudo por um dia e vir respirar um pouco?</p>
+        <div class="pot-container" onclick="tirarRecado()">
+            <div class="pot">
+                <div class="pot-label">365 Motivos</div>
+            </div>
+        </div>
 
-        <div class="buttons">
-            <button class="btn-yes" onclick="alert('Estava só esperando o sim. Te passo os detalhes logo mais!')">Eu aceito o respiro</button>
-            <button class="btn-think" onclick="alert('Tudo bem, respira fundo. Mas saiba que a pausa tá aqui te esperando.')">Deixa eu pensar só um pouquinho...</button>
+        <button class="btn-draw" onclick="tirarRecado()">💌 Puxar um Recadinho</button>
+
+        <div id="noteCard" class="note-card hidden">
+            <div class="note-number" id="noteNumber">Motivo #00</div>
+            <div class="note-text" id="noteText">Aqui vai aparecer o texto do bilhete...</div>
         </div>
     </div>
+
+    <footer>Feito com todo o carinho ❤️</footer>
+
+    <script>
+        // Carregando alguns motivos direto no script para funcionar perfeitamente de forma estática
+        const motivos = [
+            { id: 1, texto: "Porque o seu sorriso ilumina meu dia." },
+            { id: 2, texto: "Porque o seu abraço é o lugar mais seguro do mundo." },
+            { id: 3, texto: "Porque você transforma qualquer casa em lar." },
+            { id: 4, texto: "Porque você me inspira a ser um homem melhor." },
+            { id: 5, texto: "Porque você me escuta com atenção, mesmo nas minhas loucuras." },
+            { id: 6, texto: "Porque o seu olhar me dá paz." },
+            { id: 7, texto: "Porque a sua risada é a música mais linda que conheço." },
+            { id: 8, texto: "Porque você me faz acreditar no amor verdadeiro." },
+            { id: 9, texto: "Porque você é companheira em todos os momentos." },
+            { id: 10, texto: "Porque você me dá força quando eu penso em desistir." },
+            { id: 50, texto: "Porque amar você é a melhor escolha que já fiz na vida." },
+            { id: 100, texto: "Porque você é a prova de que o amor verdadeiro existe." },
+            { id: 200, texto: "Porque amar você é minha maior aventura." },
+            { id: 365, texto: "Porque eu simplesmente te amo, e isso basta para sempre. ❤" }
+        ];
+
+        function tirarRecado() {
+            // Sorteia um índice aleatório do array
+            const randomIndex = Math.floor(Math.random() * motivos.length);
+            const recadoSorteado = motivos[randomIndex];
+
+            // Elementos da DOM
+            const card = document.getElementById('noteCard');
+            const numElement = document.getElementById('noteNumber');
+            const textElement = document.getElementById('noteText');
+
+            // Aplica efeito visual de transição rápida
+            card.classList.add('hidden');
+
+            setTimeout(() => {
+                numElement.innerText = `Motivo #${recadoSorteado.id}`;
+                textElement.innerText = `"${recadoSorteado.texto}"`;
+                card.classList.remove('hidden');
+            }, 150);
+        }
+    </script>
 </body>
+
 </html>

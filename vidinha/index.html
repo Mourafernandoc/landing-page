@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um Respiro...</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+Pro:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Fundo de Campo de Girassóis de alta qualidade */
+            background-image: url('https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Source Sans Pro', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Máscara escura suave para destacar as fotos e o texto */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        /* Estilo Polaroid para as fotos espalhadas */
+        .photo {
+            position: absolute;
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border: 10px solid #fff;
+            border-bottom: 35px solid #fff;
+            box-shadow: 5px 10px 20px rgba(0,0,0,0.4);
+            z-index: 2;
+            opacity: 0.9;
+            animation: float 6s ease-in-out infinite;
+            border-radius: 2px;
+        }
+
+        /* Posições desordenadas e rotações */
+        .p1 { top: 5%; left: 5%; transform: rotate(-10deg); animation-delay: 0s; }
+        .p2 { top: 10%; right: 8%; transform: rotate(15deg); animation-delay: 1s; }
+        .p3 { bottom: 15%; left: 10%; transform: rotate(-5deg); animation-delay: 2s; }
+        .p4 { bottom: 10%; right: 5%; transform: rotate(12deg); animation-delay: 0.5s; }
+        .p5 { top: 40%; left: -2%; transform: rotate(-20deg); animation-delay: 1.5s; }
+        .p6 { top: 50%; right: -2%; transform: rotate(25deg); animation-delay: 2.5s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(inherit); }
+            50% { transform: translateY(-15px) rotate(inherit); }
+            100% { transform: translateY(0px) rotate(inherit); }
+        }
+
+        /* Caixa de Texto Glassmorphism */
+        .content-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            color: #fff;
+            z-index: 10;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        }
+
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        .btn-yes {
+            background-color: #f1c40f;
+            color: #2c3e50;
+            box-shadow: 0 4px 15px rgba(241, 196, 15, 0.4);
+        }
+
+        .btn-yes:hover {
+            background-color: #f39c12;
+            transform: translateY(-2px);
+        }
+
+        .btn-think {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-think:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* Ocultar fotos em telas muito pequenas para não poluir */
+        @media (max-width: 768px) {
+            .photo { opacity: 0.4; width: 120px; height: 150px; }
+            .content-card { padding: 30px 20px; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <!-- Imagens (Certifique-se de que os nomes dos arquivos estão corretos na mesma pasta) -->
+    <img src="image_30.png" class="photo p1" alt="Foto 1">
+    <img src="image_31.png" class="photo p2" alt="Foto 2">
+    <img src="image_32.png" class="photo p3" alt="Foto 3">
+    <img src="image_33.png" class="photo p4" alt="Foto 4">
+    <img src="image_34.png" class="photo p5" alt="Foto 5">
+    <img src="image_35.png" class="photo p6" alt="Foto 6">
+
+    <div class="content-card">
+        <h1>Pausa.</h1>
+        
+        <p>Eu sei que a cabeça está barulhenta e que os últimos dias têm exigido uma força absurda de você. Às vezes, a gente tenta abraçar o mundo, assume culpas que não são nossas e acaba esquecendo que não precisa carregar todo esse peso sozinha.</p>
+        
+        <p>Esse link não é para falar de passado, não é para planejar o futuro e, definitivamente, não é para te cobrar nada. É apenas um convite para um respiro.</p>
+        
+        <p>Quero te sequestrar um pouco dessa gravidade neste fim de semana. Preparei algo muito tranquilo, pensado exclusivamente para te ver sorrir e desligar a mente por algumas horas. Sem pressão, sem roteiros complexos e com uma surpresa no final que eu tenho certeza que você vai gostar.</p>
+        
+        <p>Você não precisa se preocupar com logística, horário ou organização. Só precisa dizer "sim" para essa pausa.</p>
+        
+        <p>Topa deixar o mundo no mudo por um dia e vir respirar um pouco?</p>
+
+        <div class="buttons">
+            <button class="btn-yes" onclick="alert('Estava só esperando o sim. Te passo os detalhes logo mais!')">Eu aceito o respiro</button>
+            <button class="btn-think" onclick="alert('Tudo bem, respira fundo. Mas saiba que a pausa tá aqui te esperando.')">Deixa eu pensar só um pouquinho...</button>
+        </div>
+    </div>
+</body>
+</html>
